@@ -1,0 +1,70 @@
+.mainDivApp
+  position: relative
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+
+#separatorDiv
+  position: absolute
+  top: -20em
+  left: 52em
+  width: 2px
+  height: 200%
+  opacity: 0
+  background-color: white
+  transform: rotate(20deg)
+  transition: width 0.1s
+  transition: opacity 0.2s
+
+.separatorApp
+  transition: opacity 0.2s
+  opacity: 1 !important
+.separatorRenderApp
+  transition: width 0.4s !important
+
+  opacity: 1 !important
+  width: 80% !important
+#nowContainerApp
+  opacity: 0
+.doingNowContainerApp
+  position: absolute
+  top: 0
+  left: 63em
+  height: 100%
+  width: 70%
+  background-color: transparent
+  opacity: 1 !important
+  z-index: 5
+
+  display: flex
+  flex-flow: column wrap
+  padding-top: 3em
+.doingNowCardApp
+  margin: 2em
+  position: relative
+  opacity: inherit
+  width: 60%
+  height: 25%
+  border: 2px solid black
+
+#midApp
+  width: 70%
+  left: -10%
+.seeMoreOnGitHub
+  opacity: inherit
+  position: absolute
+  bottom: 1em
+  left: -18em
+  width: 8em
+  height: 8em
+  background-image: url('src/assets/githublogo.png')
+  background-size: contain
+  &:hover
+    cursor: pointer
+  p
+    position: absolute
+    font-family: 'Karla'
+    font-size: 2em
+    font-weight: 800
+    width: 5em
+    left: 5em

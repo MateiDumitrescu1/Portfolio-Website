@@ -1,0 +1,176 @@
+.solarContainer
+    position: absolute
+    top: 0
+    left: 50%
+    min-width: 600px
+    width: 50%
+    height: 100%
+    background-color: transparent
+    opacity: 1
+.solarDisappear
+    transition: opacity 0.2s
+    opacity: 0
+.orbitLine
+    position: absolute
+
+    border: 1px solid white
+    background-color: transparent
+    border-radius: 999px
+.orbitLine:has(.planet:hover)
+    border: 2px solid white
+
+.orbitLineExpand
+    transition: transform 0.2s
+    transform: scale(2)
+    // class to be added when planet is clicked
+
+.planet
+    position: absolute
+    border-radius: 50%
+    background-color: black
+    border: 1px solid white
+    z-index: 2
+    color: white
+    &:hover
+        background-color: white
+
+$orbit0Size: 2000px
+$orbit1Size: 2000px
+$orbit2Size: 1600px
+$orbit3Size: 1600px
+
+$planet0Size: 150px
+$planet1Size: 170px
+$planet2Size: 150px
+$planet3Size: 150px
+
+$animationTime: 80s
+#orbit0
+    top: -20em
+    left: 20em
+    width: $orbit0Size
+    height: $orbit0Size
+#orbit1
+    top: -10em
+    left: 35em
+    width: $orbit1Size
+    height: $orbit1Size
+#orbit2
+    top: -10em
+    left: 5em
+    width: $orbit2Size
+    height: $orbit2Size
+#orbit3
+    top: 40em
+    left: -20em
+    width: $orbit3Size
+    height: $orbit3Size
+
+#planet0
+    animation: orbit0 $animationTime linear infinite
+    top: calc( ($orbit0Size / 2) - ($planet0Size / 2) )
+    left: calc( ($orbit0Size / 2) - ($planet0Size / 2) )
+    width: $planet0Size
+    height: $planet0Size
+#planet1
+    animation: orbit1 $animationTime linear infinite
+    top: calc( ($orbit1Size / 2) - ($planet1Size / 2))
+    left: calc( ($orbit1Size / 2) - ($planet1Size / 2))
+    width: $planet1Size
+    height: $planet1Size
+#planet2
+    animation: orbit2 $animationTime linear infinite
+    top: calc( ($orbit2Size / 2) - ($planet2Size / 2))
+    left: calc( ($orbit2Size / 2) - ($planet2Size / 2))
+    width: $planet2Size
+    height: $planet2Size
+#planet3
+    animation: orbit3 $animationTime linear infinite
+    top: calc( ($orbit3Size / 2) - ($planet3Size / 2))
+    left: calc( ($orbit3Size / 2) - ($planet3Size / 2))
+    width: $planet3Size
+    height: $planet3Size
+
+@keyframes orbit0
+    // for the reset animation make the whole section show a quick
+    // nice visual loading animation of a transformation 
+    // and then restart animations
+    0%
+        transform: rotate(215deg) translateX($orbit0Size / 2) rotate(-215deg)
+    100%
+        transform: rotate(170deg) translateX($orbit0Size / 2) rotate(-170deg)
+@keyframes orbit1
+    0%
+        transform: rotate(225deg) translateX($orbit1Size / 2) rotate(-225deg)
+    100%
+        transform: rotate(170deg) translateX($orbit1Size / 2) rotate(-170deg)
+@keyframes orbit2
+    0%
+        transform: rotate(215deg) translateX($orbit2Size / 2) rotate(-215deg)
+    100%
+        transform: rotate(175deg) translateX($orbit2Size / 2) rotate(-175deg)
+@keyframes orbit3
+    0%
+        transform: rotate(300deg) translateX($orbit3Size / 2) rotate(-300deg)
+    100%
+        transform: rotate(210deg) translateX($orbit3Size / 2) rotate(-210deg)
+
+#ISS
+    position: absolute
+    width: 250px
+    height: 250px
+    background-color: black
+    border-radius: 50%
+    border: 2px solid white
+    top: 25em
+    left: 20em
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    z-index: 2
+    animation: ISS $animationTime linear infinite
+// #ISS::before
+//     position: absolute
+//     content: ""
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background: radial-gradient(circle at 50% 50%, #9a9a9a, #000000)
+//     opacity: 0.2
+@keyframes ISS
+    0%
+        transform: translateX(0px)
+    10.5%
+        transform: translateX(-30px) translateY(40px)
+    11%
+        transform: translateX(-200px) translateY(200px)
+    35%
+        transform: translateX(-350px) translateY(250px)
+    37%
+        transform: translateX(300px) translateY(-350px)
+    100%
+        transform: translateX(150px) translateY(-200px)
+@keyframes ISS_SVG
+    0%
+        transform: rotate(0deg)
+    8%
+        transform: rotate(20deg)
+    10%
+        transform: rotate(142deg)
+    32%
+        transform: rotate(180deg)
+    34%
+        transform: rotate(310deg)
+    100%
+        transform: rotate(460deg)
+#actual_ISS_SVG
+    width: 70%
+    height: 70%
+    background-image: url(../assets/ISS.svg)
+    filter: invert(100%)
+    background-size: contain
+    z-index: 3
+    animation: ISS_SVG $animationTime linear infinite
+
