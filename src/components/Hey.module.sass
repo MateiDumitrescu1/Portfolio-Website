@@ -1,4 +1,4 @@
-.heyContainer   
+.heyContainer
     position: absolute
     top: 0
     left: 10em
@@ -15,40 +15,64 @@
     opacity: 0
 .moveHeyRight
     left: 20em
-.currentWorkButton 
+.currentWorkButton
     position: absolute
     left: 22.5em
     top: 5em
     z-index: 2
     font-family: 'Karla'
-    p 
-        font-size: 1.5em
-        margin: 0
-    &:hover 
-        background-color: white
-        color: black
     width: 20em
     height: 5em
     border: 2px solid white
     border-radius: 10px
     color: white
-.greeting 
-    position: relative 
+    p
+        font-size: 1.5em
+        margin: 0
+    &:hover
+        background-color: white
+        color: black
+.greeting
+    position: relative
     top: 15em
     background-color: transparent
     width: 100%
     height: 60%
 
-    h1 
+    h1
         font-family: 'Karla'
         font-size: 3em
         font-weight: 600
         color: white
         margin: 0
-    h2 
+    h2
         position: relative
         font-family: 'Karla'
         font-size: 1.5em
         font-weight: 400
         color: white
         margin: 0
+.socialMediaSection
+    position: relative
+    top: 2em
+    left: -5em
+    width: 25em
+    height: 20%
+    background-color: transparent
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: center
+    a
+        top: 5em
+        position: relative
+        width: 15%
+        height: 100%
+        filter: invert(100%)
+
+.socialMediaNoFilter
+    filter: none !important
+.biggerMailLogo
+    position: relative
+    top: 6em !important
+    scale: 1.2

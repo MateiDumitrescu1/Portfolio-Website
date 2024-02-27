@@ -1,4 +1,1 @@
-1. make the social media section in the hey
-2. implement ISS hover
-3. render project content preview on planet/ISS hover
 4. render the full prioject content: on click

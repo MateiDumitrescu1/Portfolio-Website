@@ -24,7 +24,7 @@ function MainArea({
 				timeGoDisappear={planetButtonPressed || currentWorkButtonPressed}
 				buttonFunction={buttonFunction}
 			/>
-			<ProjectContent />;
+			{ planetButtonPressed && <ProjectContent />}
 		</>
 	);
 }

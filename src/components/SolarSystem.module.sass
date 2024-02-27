@@ -29,10 +29,23 @@
     border-radius: 50%
     background-color: black
     border: 1px solid white
-    z-index: 2
+    z-index: 3
     color: white
+    transition: background-color 0.2s, color 0.2s
     &:hover
         background-color: white
+        color: black
+        cursor: pointer
+    p 
+        position: absolute
+        width: 100%
+        height: 50%
+        top: 35%
+        left: 0
+        text-align: center
+        font-size: 1.7em
+        font-family: 'Karla'
+        z-index: 2
 
 $orbit0Size: 2000px
 $orbit1Size: 2000px
@@ -130,6 +143,23 @@ $animationTime: 80s
     overflow: hidden
     z-index: 2
     animation: ISS $animationTime linear infinite
+    transition: background-color 0.2s
+
+    &:hover
+        background-color: white 
+        #actual_ISS_SVG
+            filter: invert(0%)
+
+#actual_ISS_SVG
+    width: 70%
+    height: 70%
+    background-image: url(../assets/ISS.svg)
+    filter: invert(100%)
+    background-size: contain
+    z-index: 3
+    animation: ISS_SVG $animationTime linear infinite
+    transition: filter 0.2s
+           
 // #ISS::before
 //     position: absolute
 //     content: ""
@@ -165,12 +195,5 @@ $animationTime: 80s
         transform: rotate(310deg)
     100%
         transform: rotate(460deg)
-#actual_ISS_SVG
-    width: 70%
-    height: 70%
-    background-image: url(../assets/ISS.svg)
-    filter: invert(100%)
-    background-size: contain
-    z-index: 3
-    animation: ISS_SVG $animationTime linear infinite
 
+#para0
