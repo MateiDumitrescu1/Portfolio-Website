@@ -1,1 +1,13 @@
-4. render the full prioject content: on click
+Functionality
+    pass the planet clicked ID to the project content so items
+    knows what to render
+
+Content
+1. Proiject content template:
+    technologies
+    projects 
+
+Cosmetic
+1. watch the hyperplexed vid on text that moves/shakes on hover, see
+how he implemented the has, is selectors and learn the has, not, is selectors
+2. make the other menu items fade a bit when one is hovered

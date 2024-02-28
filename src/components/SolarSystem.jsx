@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SolarSystem.module.sass";
-function SolarSytem({ timeGoDisappear, buttonFunction }) {
+function SolarSytem({timeGoDisappear, buttonFunction }) {
 	if (!timeGoDisappear) {
 		resetOrbits();
 	}
@@ -12,6 +12,7 @@ function SolarSytem({ timeGoDisappear, buttonFunction }) {
 	}
 	function expandOrbit(event) {
 		//convert from orbit it to planet id
+		const planetIdToExpand = event.currentTarget.id;
 		const orbitIdToExpand = event.currentTarget.id.replace("planet", "orbit");
 
 		const paras = document.querySelectorAll(`.${styles.planet} p`);
@@ -75,13 +76,12 @@ function SolarSytem({ timeGoDisappear, buttonFunction }) {
 					<p>Java3</p>
 				</div>
 			</div>
-			<div id={styles.ISS}>
+			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+			<div onClick={handlePlanetClick} id={styles.ISS}>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-<div 
-        onClick={handlePlanetClick}
-        id={styles.actual_ISS_SVG}>
-
-        </div>
+				<div id={styles.actual_ISS_SVG}>
+					
+				</div>
 			</div>
 		</div>
 	);

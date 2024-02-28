@@ -1,26 +1,26 @@
+$menuWidth: clamp(150px, 20em, 250px)
 .menuContainer
     position: relative
     top: 2em
     left: 0em
-    height: 60%
+    height: calc( 60% + 4em )
     background-color: transparent
     display: flex
     flex-direction: column
     align-items: center
     border-radius: 10px
-    border: 1px solid white
     border-left: none
     transition: width 0.1s ease-in-out
 .menuContainerColapsed
     width: 0
     opacity: 0
-    .menuItem 
+    .menuItem
         opacity: 0
 
 .menuContainerExpanded
     opacity: 1
-    width: clamp(150px, 20em, 250px)
-    .menuItem 
+    width: $menuWidth
+    .menuItem
         opacity: 1
 
 .menuButton
@@ -46,16 +46,18 @@
     width: 100%
     height: 25%
     background-color: transparent
-    border-bottom: 1px solid white
     color: white
-
+    margin: 0.5em
     transition: opacity 0.3s ease-in-out
+    border-radius: 10px
     p
         transition: transform 0.5s, color 0.3s
         margin-left: 0.5em
 
     &:hover
         cursor: pointer
+        border: 1px solid white
+       
         p
             transform: translateX(0.5em) translateY(0.5em)
         .underlineD
@@ -78,3 +80,54 @@
         &:first-child
             position: relative
             margin-top: 0em
+.AnBorder
+    position: absolute
+    top: 0
+    left: 0
+    width: $menuWidth
+    height: 4px
+    background-color: transparent
+    background-image: radial-gradient( circle 100px, white, black )
+    background-size: 70% 70%
+    background-repeat: no-repeat
+    background-position: -300% center
+#botBorder
+    top: 100%
+.AnBorderGo
+    animation: slideRight 0.2s ease-in-out
+
+@keyframes slideRight
+    0%
+        background-position: -200% center
+    100%
+        background-position: 200% center
+
+#rightBorder
+    position: absolute
+    top: 0
+    left: 100%
+    height: 100%
+    width: 4px
+    background-color: transparent
+    background-image: radial-gradient( circle 100px, white, black ), radial-gradient( circle 100px, white, black )
+    background-size: 70% 70%, 70% 70%
+    background-repeat: no-repeat
+    background-position: center center, center center
+    opacity: 0
+
+.rightBorderAnimate
+    animation: slideTopButtomToCenter 0.6s linear
+
+@keyframes slideTopButtomToCenter
+    0%
+        background-position: center -100%, center 200%
+        opacity: 0
+    33%
+        background-position: center -100%, center 200%
+        opacity: 1
+    50%
+        background-position: center center, center center
+        opacity: 1
+    100%
+        background-position: center center, center center
+        opacity: 0 

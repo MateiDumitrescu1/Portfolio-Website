@@ -21,16 +21,13 @@ function Hey({menuButtonPressed, timeGoDisappear }) {
 				<a href="https://github.com/MateiDumitrescu1">
 					<img src="src/assets/github.png" alt="GitHub" />
 				</a>
-				<a href="https://codepen.io/your-work">
+				<a href="https://www.linkedin.com/in/matei-dumitrescu-999a14292/">
 					<img src="src/assets/linkedin.png" alt="LinkedIn" />
 				</a>
 				<a href="https://codepen.io/your-work">
 					<img src="src/assets/codepen.png" alt="CodePen" />
 				</a>
-				<a className={styles.biggerMailLogo} href="https://codepen.io/your-work">
-					<img src="src/assets/gmail.png" alt="Gmail" />
-				</a>
-				<a className={styles.socialMediaNoFilter} href="https://codepen.io/your-work">
+				<a className={styles.socialMediaNoFilter} href="https://www.instagram.com/matei.dumitrescu.7792/">
 					<img src="src/assets/insta.png" alt="Instagram" />
 				</a>
 				

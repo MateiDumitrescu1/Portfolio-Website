@@ -24,7 +24,8 @@ function MainArea({
 				timeGoDisappear={planetButtonPressed || currentWorkButtonPressed}
 				buttonFunction={buttonFunction}
 			/>
-			{ planetButtonPressed && <ProjectContent />}
+			{ planetButtonPressed && <ProjectContent 
+			menuButtonPressed={menuButtonPressed} />}
 		</>
 	);
 }
@@ -151,6 +152,10 @@ function App() {
 					
 				</div>}
 				{ currentWorkButtonPressed && <div className="seeMoreOnGitHub">
+					{/* biome-ignore lint/a11y/useAnchorContent: <explanation> */}
+					<a href="https://github.com/MateiDumitrescu1" alt="GitHub">
+						
+					</a>
 					<p>More on GitHub</p>
 				</div>}
 	
