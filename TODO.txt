@@ -1,13 +1,17 @@
+
 Functionality
-    pass the planet clicked ID to the project content so items
-    knows what to render
+    
 
 Content
 1. Proiject content template:
-    technologies
-    projects 
+    technologies column - later render them nicely with a holo white effect on logos
+    projects -> built in sections
+        left column with an 2 images for the project
+        right column with Title, description and Tech Stack
 
 Cosmetic
 1. watch the hyperplexed vid on text that moves/shakes on hover, see
 how he implemented the has, is selectors and learn the has, not, is selectors
 2. make the other menu items fade a bit when one is hovered
+3. add a background radial gradient on body that movies
+with the mouse

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SolarSystem.module.sass";
-function SolarSytem({timeGoDisappear, buttonFunction }) {
+function SolarSytem({updateSetPlanetIdPressed,timeGoDisappear, buttonFunction }) {
 	if (!timeGoDisappear) {
 		resetOrbits();
 	}
@@ -14,6 +14,9 @@ function SolarSytem({timeGoDisappear, buttonFunction }) {
 		//convert from orbit it to planet id
 		const planetIdToExpand = event.currentTarget.id;
 		const orbitIdToExpand = event.currentTarget.id.replace("planet", "orbit");
+
+		updateSetPlanetIdPressed(planetIdToExpand);
+
 
 		const paras = document.querySelectorAll(`.${styles.planet} p`);
 		const planets = document.querySelectorAll(`.${styles.planet}`);

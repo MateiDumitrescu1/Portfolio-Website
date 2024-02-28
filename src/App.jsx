@@ -9,6 +9,8 @@ import styles from "./components/Menu.module.sass";
 import heystyles from "./components/Hey.module.sass";
 
 function MainArea({
+	planetID,
+	updateSetPlanetIdPressed,
 	currentWorkButtonPressed,
 	menuButtonPressed,
 	buttonFunction,
@@ -21,10 +23,12 @@ function MainArea({
 				timeGoDisappear={planetButtonPressed}
 			/>
 			<SolarSystem
+				updateSetPlanetIdPressed={updateSetPlanetIdPressed}
 				timeGoDisappear={planetButtonPressed || currentWorkButtonPressed}
 				buttonFunction={buttonFunction}
 			/>
 			{ planetButtonPressed && <ProjectContent 
+			planetID={planetID}
 			menuButtonPressed={menuButtonPressed} />}
 		</>
 	);
@@ -38,6 +42,12 @@ function App() {
 		setMenuButtonPressed(!menuButtonPressed);
 	};
 	const [planetButtonPressed, setPlanetButtonPressed] = useState(false);
+	const [planetIdPressed, setPlanetIdPressed] = useState("");
+
+	function updateSetPlanetIdPressed(planetID) {
+		setPlanetIdPressed(planetID);
+	}
+
 	const updatePlanetButtonPressed = () => {
 		if (planetButtonPressed === false) {
 			setPlanetButtonPressed(true);
@@ -132,6 +142,8 @@ function App() {
 			</button>
 			<Menu menuButtonPressed={menuButtonPressed} />;
 			<MainArea
+				planetID={planetIdPressed}
+				updateSetPlanetIdPressed={updateSetPlanetIdPressed}
 				currentWorkButtonPressed={currentWorkButtonPressed}
 				menuButtonPressed={menuButtonPressed}
 				buttonFunction={updatePlanetButtonPressed}
