@@ -154,7 +154,16 @@ function App() {
 			</div>
 			<div id="nowContainerApp">
 				{ currentWorkButtonPressed && <div className="doingNowCardApp">
-
+				<div className="imgContainerApp">
+					<img src="src\assets\magichover.png" alt="Magic Hover" />
+				</div>
+					<div className="doingNowDescriptionApp"> 
+						<h1>Recreating this hover effect...</h1>
+						<h2 className={heystyles.gradient}>Why?</h2>
+						<p>Because this effect is one of the most professionally
+						implemented hovers I have ever seen</p>
+						{/* <div className="progressResultPopUpApp">Progress / Result</div> */}
+					</div>
 				</div>}
 				
 				{ currentWorkButtonPressed && <div id="midApp" className="doingNowCardApp">

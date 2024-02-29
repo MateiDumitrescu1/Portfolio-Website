@@ -10,7 +10,19 @@
     border: 2px solid white
     display: grid
     grid-template-columns: 1fr 6fr
-
+#projectContentSecondStableContainer
+    position: absolute
+    top: 13em
+    left: 10em
+    width: 80%
+    height: 70%
+    background-color: transparent
+    opacity: 0
+    display: grid
+    grid-template-columns: 1fr 6fr
+.StableContainerAnimate
+    opacity: 1 !important
+    transition: opacity 1.1s ease-in-out
 .projectContentContainerExpand
     width: 80% !important
     height: 70% !important
@@ -35,27 +47,82 @@
     top: 0
     width: calc(100% - 2em )
     height: calc( 100% - 2em )
-    background-color: blue
+    background-color: transparent
     grid-column: 2 / 2
-#sassLogo
+
+    display: grid
+    grid-template: 1fr 1fr / 1fr 1fr
+    gap: 2em
+.teachStackLogo
     position: relative
+    cursor: pointer
     width: 100%
-    grid-row: 2
+
+#sassLogo
+    grid-row: 4
     background-image: url(../assets/sassLogo.png)
     background-size: contain
     background-repeat: no-repeat
     background-position: center
 #reactLogo
-    position: relative
-    width: 100%
     grid-row: 1
     background-image: url(../assets/react.png)
     background-size: 34%
     background-repeat: no-repeat
     background-position: center
     animation: spin 60s linear infinite
+#tailwindLogo
+    grid-row: 2
+    background-image: url(../assets/tailwind.png)
+    background-size: 50%
+    background-repeat: no-repeat
+    background-position: center
+#tsLogo
+    grid-row: 3
+    background-image: url(../assets/ts.png)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+#emotion
+    color: pink
+    font-family: 'Karla'
+    font-size: 2em
+    font-weight: 600
+    text-align: center
 @keyframes spin
     0%
         transform: rotate(0deg)
     100%
         transform: rotate(360deg)
+
+.projectCard
+    position: relative
+    background-color: transparent
+    color: white
+
+    border: 2px solid white
+    border-radius: 10px
+
+    grid-row: 1 / 1
+    grid-column: 1 / 1
+    overflow: hidden
+    display: grid
+    grid-template-columns: 1fr 3fr
+.imageProjectStack
+    position: relative
+    background-color: transparent
+    grid-column: 1 / 1
+    display: flex
+    flex-flow: column wrap
+    align-items: center
+    justify-content: space-around
+    padding: 1em
+.projectCardContent
+    position: relative
+    font-size: 3em
+    font-family: 'Karla'
+    font-style: italic
+    text-align: center
+    position: relative
+    grid-column: 2 / 2
+    background-color: transparent

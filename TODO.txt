@@ -1,6 +1,9 @@
+NOW: make a current interest be recreating this video
+https://www.youtube.com/watch?v=DeHRDNRQhNg&t=1s
 
 Functionality
-    
+    FUTURE: when clicked on a planet, make a new manu appear
+    where you can select which planet content to go to
 
 Content
 1. Proiject content template:
@@ -8,6 +11,17 @@ Content
     projects -> built in sections
         left column with an 2 images for the project
         right column with Title, description and Tech Stack
+front end projects:
+    portofolio website
+ISS software projects project content:
+    same template
+    brainfuck projects 
+
+Other pages
+    About me -> expands the hey container to the 
+    whole stopCurrentWorkHover
+
+    My work -> 
 
 Cosmetic
 1. watch the hyperplexed vid on text that moves/shakes on hover, see
@@ -15,3 +29,12 @@ how he implemented the has, is selectors and learn the has, not, is selectors
 2. make the other menu items fade a bit when one is hovered
 3. add a background radial gradient on body that movies
 with the mouse
+4. pick a color pallete for the final version 1
+4. https://www.youtube.com/watch?v=yu0Cm4BqQv0&ab_channel=Hyperplexed
+    based on this effect style the text from the hey section
+        how to do:
+        wrap the words in span
+5. https://www.youtube.com/watch?v=joDhIH6Xumw&ab_channel=Hyperplexed
+    make a low opacity grid on the project content section
+    make it turn the color of the technology when hovering 
+    over the tech image in the left column 
