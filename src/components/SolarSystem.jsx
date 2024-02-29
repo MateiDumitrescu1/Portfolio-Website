@@ -46,7 +46,7 @@ function SolarSytem({updateSetPlanetIdPressed,timeGoDisappear, buttonFunction })
 					id={styles.planet0}
 					className={styles.planet}
 				>
-					<p id={styles.para0}>Front End0</p>
+					<p id={styles.para0}>Front End</p>
 				</div>
 			</div>
 			<div id={styles.orbit1} className={styles.orbitLine}>
@@ -56,7 +56,7 @@ function SolarSytem({updateSetPlanetIdPressed,timeGoDisappear, buttonFunction })
 					id={styles.planet1}
 					className={styles.planet}
 				>
-					<p>Back End1</p>
+					<p>Back End</p>
 				</div>
 			</div>
 			<div id={styles.orbit2} className={styles.orbitLine}>
@@ -66,7 +66,7 @@ function SolarSytem({updateSetPlanetIdPressed,timeGoDisappear, buttonFunction })
 					id={styles.planet2}
 					className={styles.planet}
 				>
-					<p>.NET2</p>
+					<p>.NET</p>
 				</div>
 			</div>
 			<div id={styles.orbit3} className={styles.orbitLine}>
@@ -76,7 +76,7 @@ function SolarSytem({updateSetPlanetIdPressed,timeGoDisappear, buttonFunction })
 					id={styles.planet3}
 					className={styles.planet}
 				>
-					<p>Java3</p>
+					<p>Java</p>
 				</div>
 			</div>
 			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}

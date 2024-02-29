@@ -1,5 +1,9 @@
-NOW: make a current interest be recreating this video
-https://www.youtube.com/watch?v=DeHRDNRQhNg&t=1s
+NOW: make a pre loader for website
+
+laser animation:
+    div cu intens in mijloc
+    box shadow pe margine 
+    particles that follow the animation
 
 Functionality
     FUTURE: when clicked on a planet, make a new manu appear
@@ -30,10 +34,8 @@ how he implemented the has, is selectors and learn the has, not, is selectors
 3. add a background radial gradient on body that movies
 with the mouse
 4. pick a color pallete for the final version 1
-4. https://www.youtube.com/watch?v=yu0Cm4BqQv0&ab_channel=Hyperplexed
-    based on this effect style the text from the hey section
-        how to do:
-        wrap the words in span
+https://www.youtube.com/watch?v=z1wZp4jV4cQ&t=21s -> add
+to curent work, this video is crazy
 5. https://www.youtube.com/watch?v=joDhIH6Xumw&ab_channel=Hyperplexed
     make a low opacity grid on the project content section
     make it turn the color of the technology when hovering 

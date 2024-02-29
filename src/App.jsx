@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.sass";
+import "./index.sass";
 import Menu from "./components/Menu";
 import Hey from "./components/Hey";
 import SolarSystem from "./components/SolarSystem";
@@ -7,6 +8,7 @@ import ProjectContent from "./components/ProjectContent";
 import Logo from "./components/Logo";
 import styles from "./components/Menu.module.sass";
 import heystyles from "./components/Hey.module.sass";
+import PreLoader from "./components/PreLoader";
 
 function MainArea({
 	planetID,
@@ -36,6 +38,20 @@ function MainArea({
 
 function App() {
 	const [menuButtonPressed, setMenuButtonPressed] = useState(false);
+
+	const [showLoader, setShowLoader] = useState(true);
+	const [showmain, setShowMain] = useState(false);
+	useEffect(() => {
+		// Simulate a loading time
+		const timer = setTimeout(() => setShowLoader(false), 3000); // Adjust time as necessary
+		return () => clearTimeout(timer);
+	  }, []);
+	useEffect(() => {
+		// Simulate a loading time
+		const timer = setTimeout(() => setShowMain(true), 2500); // Adjust time as necessary
+		return () => clearTimeout(timer);
+	  }, []);
+
 	const [currentWorkButtonPressed, setCurrentWorkButtonPressed] =
 		useState(false);
 	const updateMenuButtonPressed = () => {
@@ -113,10 +129,11 @@ function App() {
 		marginLeft: "2em",
 		marginTop: "2em",
 	};
-
 	// Pass buttonPressed as a prop to MainArea
 	return (
-		<main className="mainDivApp">
+		<>
+		{ showLoader &&  <PreLoader /> }
+		{ showmain && ( <main className="mainDivApp">
 			<div style={menuButtonLogoContainer}>
 				<button
 					onClick={updateMenuButtonPressed}
@@ -162,15 +179,28 @@ function App() {
 						<h2 className={heystyles.gradient}>Why?</h2>
 						<p>Because this effect is one of the most professionally
 						implemented hovers I have ever seen</p>
-						{/* <div className="progressResultPopUpApp">Progress / Result</div> */}
 					</div>
 				</div>}
 				
 				{ currentWorkButtonPressed && <div id="midApp" className="doingNowCardApp">
-					
+				<div className="imgContainerApp">
+					<img src="src\assets\components.webp" alt="Magic Hover" />
+				</div>
+					<div className="doingNowDescriptionApp"> 
+						<h1>Building my own component library</h1>
+						<h2 className={heystyles.gradient}>Why?</h2>
+						<p>Amazin for learning. Fun. I want my products to stand out</p>
+					</div>
 				</div>}
 				{ currentWorkButtonPressed && <div className="doingNowCardApp">
-					
+				<div className="imgContainerApp">
+					<img src="src\assets\dotnet.png" alt="Magic Hover" />
+				</div>
+					<div className="doingNowDescriptionApp"> 
+						<h1>Learnign .NET</h1>
+						<h2 className={heystyles.gradient}>Why?</h2>
+						<p>C# is cool and a lot of things are built with .NET!</p>
+					</div>
 				</div>}
 				{ currentWorkButtonPressed && <div className="seeMoreOnGitHub">
 					{/* biome-ignore lint/a11y/useAnchorContent: <explanation> */}
@@ -181,7 +211,8 @@ function App() {
 				</div>}
 	
 			</div>
-		</main>
+		</main> ) }
+		</>
 	);
 }
 

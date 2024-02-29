@@ -1,8 +1,15 @@
 .mainDivApp
-  position: relative
+  position: absolute
   height: 100vh
   width: 100vw
   overflow: hidden
+  animation: fadeIn 1s
+  z-index: 1
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1 
 
 #separatorDiv
   position: absolute
@@ -43,10 +50,10 @@
   margin: 2em
   position: relative
   opacity: inherit
-  width: 60%
+  width: 65%
   overflow: hidden
   height: 25%
-  border: 2px solid black
+  // border: 2px solid black
   display: grid
   grid-template-columns: 33% 1fr
   opacity: 0.9
@@ -63,12 +70,16 @@
   justify-content: center
   align-items: center
   img
-    width: 95%
+    width: 92%
+    transition: transform 1s
+  &:hover img
+    transform: scale(1.1)
+    
 .doingNowDescriptionApp
   position: relative
   grid-column: 2 / 2
   background-color: transparent
-  margin: 0.5em
+  margin: 1em
   h1
     font-family: 'Karla'
     font-size: 2em
@@ -85,20 +96,11 @@
     position: relative
     top: 0.5em
     font-family: 'Karla'
-    font-size: 1.2em
+    font-size: 1.3em
     font-weight: 800
     text-align: start
     margin: 0
-// .progressResultPopUpApp
-//   position: relative
-//   grid-column: 2 / 2
-//   bottom: -2.5em
-//   background-color: black
-//   color: white
-//   left: 0
-//   bottom: -2em
-//   width: 100%
-//   height: 2em
+
 #midApp
   width: 70%
   left: -10%

@@ -1,0 +1,86 @@
+
+.textContainer
+    z-index: 16
+    h1 
+        color: #f72585
+        font-family: 'Splash'
+        font-size: 6em
+        
+.top 
+    position: absolute
+    width: 100vw
+    height: 35%
+    top: 0
+    left: 0
+    background-color: black
+    animation: pullUp 0.5s 2.5s ease-in-out 
+    animation-fill-mode: forwards
+    z-index: 15
+    opacity: 1
+    > h1
+        width: 100%
+        font-family: 'Karla'
+        font-size: 12em
+        font-weight: 800
+        text-align: center
+    &::before
+        // make a thin line at the bottom, with a 
+        // orange linear gradient that moves from left ro right
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 0.5em
+        background: radial-gradient( circle 100px, orange, black )
+        background-size: 200%
+        animation: lineCut 2.7s forwards
+        z-index: 15
+@keyframes lineCut
+    0%
+        opacity: 0
+        background-position: 100% center
+    79%
+        opacity: 0
+        background-position: 100% center
+    80%
+        opacity: 1
+        background-position: 100% center
+    90%
+        opacity: 1
+    100%
+        opacity: 0
+        background-position: 0% center
+@keyframes pullUp
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(-100%)
+@keyframes pullDown
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(100%)      
+.bot 
+    position: absolute
+    width: 100vw
+    height: 65%
+    bottom: 0
+    left: 0
+    background-color: black 
+    animation: pullDown 0.5s 2.5s ease-in-out 
+    animation-fill-mode: forwards
+    z-index: 15
+    opacity: 1
+    > h1
+        color: white
+        font-family: 'Karla'
+        font-size: 12em
+        font-weight: 800
+        text-align: center
+#poz1 
+    position: absolute
+    bottom: 0
+#poz2
+    position: absolute
+    top: 0

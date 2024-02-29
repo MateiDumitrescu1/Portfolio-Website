@@ -98,7 +98,7 @@ $animationTime: 80s
     width: $planet2Size
     height: $planet2Size
 #planet3
-    animation: orbit3 $animationTime linear infinite
+    animation: orbit3 $animationTime  linear infinite
     top: calc( ($orbit3Size / 2) - ($planet3Size / 2))
     left: calc( ($orbit3Size / 2) - ($planet3Size / 2))
     width: $planet3Size
@@ -111,12 +111,12 @@ $animationTime: 80s
     0%
         transform: rotate(215deg) translateX($orbit0Size / 2) rotate(-215deg)
     100%
-        transform: rotate(170deg) translateX($orbit0Size / 2) rotate(-170deg)
+        transform: rotate(175deg) translateX($orbit0Size / 2) rotate(-175deg)
 @keyframes orbit1
     0%
         transform: rotate(225deg) translateX($orbit1Size / 2) rotate(-225deg)
     100%
-        transform: rotate(170deg) translateX($orbit1Size / 2) rotate(-170deg)
+        transform: rotate(180deg) translateX($orbit1Size / 2) rotate(-180deg)
 @keyframes orbit2
     0%
         transform: rotate(215deg) translateX($orbit2Size / 2) rotate(-215deg)
@@ -124,9 +124,9 @@ $animationTime: 80s
         transform: rotate(175deg) translateX($orbit2Size / 2) rotate(-175deg)
 @keyframes orbit3
     0%
-        transform: rotate(300deg) translateX($orbit3Size / 2) rotate(-300deg)
+        transform: rotate(290deg) translateX($orbit3Size / 2) rotate(-290deg)
     100%
-        transform: rotate(210deg) translateX($orbit3Size / 2) rotate(-210deg)
+        transform: rotate(225deg) translateX($orbit3Size / 2) rotate(-225deg)
 
 #ISS
     position: absolute
