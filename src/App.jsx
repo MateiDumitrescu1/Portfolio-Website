@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
+
+// SASS files
 import "./App.sass";
 import "./index.sass";
+import separatorStyles from "./components/Separator.module.sass";
+// Components
 import Menu from "./components/Menu";
 import Hey from "./components/Hey";
 import SolarSystem from "./components/SolarSystem";
 import ProjectContent from "./components/ProjectContent";
-import Logo from "./components/Logo";
-import styles from "./components/Menu.module.sass";
-import heystyles from "./components/Hey.module.sass";
 import PreLoader from "./components/PreLoader";
-
-import menuIcon from "./assets/menu.png";
-
-
-/* Images for current work section */
-import magichover from "./assets/magichover.png";
-import components from "./assets/components.webp";
-import dotnet from "./assets/dotnet.png";
-import githubSeeMore from "./assets/githublogo.png";
-/* Images for current work section */
+import TopLeftButtons from "./components/TopLeftButtons";
+import CurrentWork from "./components/CurrentWork";
 
 function MainArea({
 	planetID,
@@ -47,6 +40,9 @@ function MainArea({
 }
 
 function App() {
+
+	const [currentWorkHovered, setCurrentWorkHovered] = useState(false);
+
 	const [menuButtonPressed, setMenuButtonPressed] = useState(false);
 
 	const [showLoader, setShowLoader] = useState(true);
@@ -80,93 +76,35 @@ function App() {
 		}
 		// turn the current work button into a back button
 	};
-	const currentWorkHover = (event) => {
-		if (planetButtonPressed === false) {
-			const sepDiv = document.getElementById("separatorDiv");
-			sepDiv.classList.add("separatorApp");
-		}
-	};
-	const stopCurrentWorkHover = (event) => {
-		if (planetButtonPressed === false) {
-			const sepDiv = document.getElementById("separatorDiv");
-			sepDiv.classList.remove("separatorApp");
-		}
-	};
 	// curent work function
-	// curent work function
-	const backButtonPressed = () => {
+	const EverythingButtonPressed = () => {
 		if (currentWorkButtonPressed === true) {
 			// now the current work section dissapears
 			setCurrentWorkButtonPressed(false);
-			DONTrenderWorkNowContent();
 		} else if (planetButtonPressed === true) {
+			// 
 			setPlanetButtonPressed(false);
 			setCurrentWorkButtonPressed(false);
 		} else {
 			// now we see the curent work section
 			setCurrentWorkButtonPressed(true);
 			setPlanetButtonPressed(false);
-			const sepDiv = document.getElementById("separatorDiv");
-			sepDiv.classList.add("separatorRenderApp");
-
-			renderWorkNowContent();
 		}
 	};
-	// curent work function
-	// curent work function
-	function renderWorkNowContent() {
-		console.log();
-		setTimeout(() => {
-			const doingNowContainerAppEl = document.getElementById("nowContainerApp");
-			doingNowContainerAppEl.classList.add("doingNowContainerApp");
-		}, 300);
-	}
-	function DONTrenderWorkNowContent() {
-		const sepDiv = document.getElementById("separatorDiv");
-		sepDiv.classList.remove("separatorRenderApp");
 
-		const doingNowContainerAppEl = document.getElementById("nowContainerApp");
-		doingNowContainerAppEl.classList.remove("doingNowContainerApp");
-	}
-	const menuButtonLogoContainer = {
-		display: "flex",
-		flexFlow: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
-		backgroundColor: "transparent",
-		height: "15vh",
-		width: "12em",
-		marginLeft: "2em",
-		marginTop: "2em",
-	};
 	// Pass buttonPressed as a prop to MainArea
 	return (
 		<>
 		{ showLoader &&  <PreLoader /> }
 		{ showmain && ( <main className="mainDivApp">
-			<div style={menuButtonLogoContainer}>
-				<button
-					onClick={updateMenuButtonPressed}
-					type="button"
-					className={styles.menuButton}
-				>
-					<img src={menuIcon} alt="menu" />
-				</button>
-				<Logo />
-			</div>
-			<button
-				onClick={backButtonPressed}
-				onMouseEnter={currentWorkHover}
-				onMouseLeave={stopCurrentWorkHover}
-				className={heystyles.currentWorkButton}
-				type="button"
-			>
-				{!planetButtonPressed && !currentWorkButtonPressed && (
-					<p>See my current work</p>
-				)}
-				{planetButtonPressed && !currentWorkButtonPressed && <p>Back</p>}
-				{currentWorkButtonPressed && <p>Back Home</p>}
-			</button>
+			<TopLeftButtons
+				setCurrentWorkHovered={setCurrentWorkHovered}
+				menuButtonPressed={menuButtonPressed}
+				currentWorkButtonPressed={currentWorkButtonPressed}
+				planetButtonPressed={planetButtonPressed}
+				updateMenuButtonPressed={updateMenuButtonPressed}
+				everythingButtonPressed={EverythingButtonPressed}
+			/>
 			<Menu menuButtonPressed={menuButtonPressed} />;
 			<MainArea
 				planetID={planetIdPressed}
@@ -176,51 +114,19 @@ function App() {
 				buttonFunction={updatePlanetButtonPressed}
 				planetButtonPressed={planetButtonPressed}
 			/>
-			<div id="separatorDiv">
+
+			{ !planetButtonPressed &&
+			<div id={separatorStyles.separatorBase}
+			className={`${currentWorkHovered ? separatorStyles.show : ""}
+			${currentWorkButtonPressed && separatorStyles.expandSeparator} `}>
 				
-			</div>
-			<div id="nowContainerApp">
-				{ currentWorkButtonPressed && <div className="doingNowCardApp">
-				<div className="imgContainerApp">
-					<img src={magichover} alt="Magic Hover" />
-				</div>
-					<div className="doingNowDescriptionApp"> 
-						<h1>Recreating this hover effect</h1>
-						<h2 className={heystyles.gradient}>Why?</h2>
-						<p>Because this effect is one of the most professionally
-						implemented hovers I have ever seen</p>
-					</div>
-				</div>}
-				
-				{ currentWorkButtonPressed && <div id="midApp" className="doingNowCardApp">
-				<div className="imgContainerApp">
-					<img src={components} alt="Magic Hover" />
-				</div>
-					<div className="doingNowDescriptionApp"> 
-						<h1>Building my own component library</h1>
-						<h2 className={heystyles.gradient}>Why?</h2>
-						<p>Amazing for learning. Fun. I want my products to stand out and go from concept to real-life fast</p>
-					</div>
-				</div>}
-				{ currentWorkButtonPressed && <div className="doingNowCardApp">
-				<div className="imgContainerApp">
-					<img src={dotnet} alt="Magic Hover" />
-				</div>
-					<div className="doingNowDescriptionApp"> 
-						<h1>Learning .NET</h1>
-						<h2 className={heystyles.gradient}>Why?</h2>
-						<p>C# is cool and a lot of things are built with .NET!</p>
-					</div>
-				</div>}
-				{ currentWorkButtonPressed && <div className="seeMoreOnGitHub">
-					{/* biome-ignore lint/a11y/useAnchorContent: <explanation> */}
-					<a href={githubSeeMore} alt="GitHub">
-						
-					</a>
-					<p>More on GitHub</p>
-				</div>}
-	
-			</div>
+			</div> }
+
+			{ currentWorkButtonPressed && 
+			<CurrentWork
+				currentWorkButtonPressed={currentWorkButtonPressed}
+			/> }
+
 		</main> ) }
 		</>
 	);

@@ -1,7 +1,7 @@
 $menuWidth: clamp(150px, 20em, 250px)
 .menuContainer
-    position: relative
-    top: 2em
+    position: absolute
+    top: 15em
     left: 0em
     height: calc( 60% + 4em )
     background-color: transparent
@@ -23,18 +23,7 @@ $menuWidth: clamp(150px, 20em, 250px)
     .menuItem
         opacity: 1
 
-.menuButton
-    position: relative
-    height: 4em
-    min-width: 4em
-    color: black
-    border: 2px solid white
-    border-radius: 50px
-    img
-        filter: invert(100%)
-        scale: 0.7
-    &:hover
-        // something
+
 .underlineD
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out
     opacity: 0
@@ -63,22 +52,7 @@ $menuWidth: clamp(150px, 20em, 250px)
             transform: translateX(0.5em) translateY(0.5em)
             opacity: 1
 
-.logoContainer
-    position: relative
-    width: 6em
-    height: 6em
-    background-color: transparent
-    margin-right: 3em
-    margin-left: 1em
-    cursor: pointer
-    p
-        font-family: 'Karla'
-        font-size: 20px
-        color: white
-        margin-left: 1em
-        &:first-child
-            position: relative
-            margin-top: 0em
+
 .AnBorder
     position: absolute
     top: 0

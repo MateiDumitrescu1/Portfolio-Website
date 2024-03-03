@@ -1,0 +1,52 @@
+.container
+    position: absolute
+    height: 10em
+    width: 42em
+    background-color: transparent
+
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    padding: 1em
+    margin-top: 1em
+    margin-left: 1em
+.menuButton
+    position: relative
+    height: 4em
+    width: 4em
+    color: black
+    border: 2px solid white
+    border-radius: 50px
+    img
+        filter: invert(100%)
+        scale: 0.7
+.logoContainer
+    position: relative
+    width: 8em
+    height: 6em
+    background-color: transparent
+    
+    cursor: pointer
+    p
+        font-family: 'Karla'
+        font-size: 22px
+        color: white
+        &:first-child
+            position: relative
+            margin-top: 0em
+.currentWorkButton
+    position: relative
+    z-index: 2
+    font-family: 'Karla'
+    width: 20em
+    height: 5em
+    border: 2px solid white
+    border-radius: 10px
+    color: white
+    p
+        font-size: 1.5em
+        margin: 0
+    &:hover
+        background-color: white
+        color: black
