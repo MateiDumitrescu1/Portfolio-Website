@@ -1,22 +1,16 @@
 
-.textContainer
-    z-index: 16
-    h1 
-        color: #f72585
-        font-family: 'Splash'
-        font-size: 6em
-        
-.top 
+.top
     position: absolute
     width: 100vw
     height: 35%
     top: 0
     left: 0
     background-color: black
-    animation: pullUp 0.5s 2.5s ease-in-out 
+    animation: pullUp 0.5s 2.5s ease-in-out
     animation-fill-mode: forwards
     z-index: 15
     opacity: 1
+    background-repeat: no-repeat
     > h1
         width: 100%
         font-family: 'Karla'
@@ -60,15 +54,15 @@
     0%
         transform: translateY(0)
     100%
-        transform: translateY(100%)      
-.bot 
+        transform: translateY(100%)
+.bot
     position: absolute
     width: 100vw
     height: 65%
     bottom: 0
     left: 0
-    background-color: black 
-    animation: pullDown 0.5s 2.5s ease-in-out 
+    background-color: black
+    animation: pullDown 0.5s 2.5s ease-in-out
     animation-fill-mode: forwards
     z-index: 15
     opacity: 1
@@ -78,7 +72,7 @@
         font-size: 12em
         font-weight: 800
         text-align: center
-#poz1 
+#poz1
     position: absolute
     bottom: 0
 #poz2

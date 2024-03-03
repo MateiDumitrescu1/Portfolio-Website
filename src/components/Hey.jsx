@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./Hey.module.sass";
 import '../index.sass'
 import { css,  keyframes } from "@emotion/react";
+import github from '../assets/github.png'
+import linkedin from '../assets/linkedin.png'
+import codepen from '../assets/codepen.png'
+import insta from '../assets/insta.png'
+
 function Hey({menuButtonPressed, timeGoDisappear }) {
 	
 	const purple = {
@@ -45,16 +50,16 @@ function Hey({menuButtonPressed, timeGoDisappear }) {
 			</div>
 			<div className={styles.socialMediaSection}>
 				<a href="https://github.com/MateiDumitrescu1">
-					<img src="src/assets/github.png" alt="GitHub" />
+					<img src={github} alt="GitHub" />
 				</a>
 				<a href="https://www.linkedin.com/in/matei-dumitrescu-999a14292/">
-					<img src="src/assets/linkedin.png" alt="LinkedIn" />
+					<img src={linkedin} alt="LinkedIn" />
 				</a>
 				<a href="https://codepen.io/your-work">
-					<img src="src/assets/codepen.png" alt="CodePen" />
+					<img src={codepen} alt="CodePen" />
 				</a>
 				<a className={styles.socialMediaNoFilter} href="https://www.instagram.com/matei.dumitrescu.7792/">
-					<img src="src/assets/insta.png" alt="Instagram" />
+					<img src={insta} alt="Instagram" />
 				</a>
 				
 			</div>

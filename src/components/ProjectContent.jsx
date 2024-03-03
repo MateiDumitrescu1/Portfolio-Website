@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "./ProjectContent.module.sass";
+import defaultImage from "../assets/default_image.png";
+
 function ProjectContent({ planetID, menuButtonPressed }) {
 	const [animate, setAnimate] = useState(false);
 	const actualPlanetID = planetID.split("_")[1];
@@ -54,8 +56,8 @@ function ProjectContent({ planetID, menuButtonPressed }) {
 						<div className={styles.projectsContainer}> 
 							<div className={styles.projectCard}>
 								<div className={styles.imageProjectStack}> 
-									<img src="src/assets/default_image.png" alt="imgDefault" />
-									<img src="src/assets/default_image.png" alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
 								</div>
 								<div className={styles.projectCardContent}>Coming real soon...</div>
 							</div>
@@ -71,8 +73,8 @@ function ProjectContent({ planetID, menuButtonPressed }) {
 						<div className={styles.projectsContainer}> 
 							<div className={styles.projectCard}>
 								<div className={styles.imageProjectStack}> 
-									<img src="src/assets/default_image.png" alt="imgDefault" />
-									<img src="src/assets/default_image.png" alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
 								</div>
 								<div className={styles.projectCardContent}>Backend coming real soon...</div>
 							</div>
@@ -88,8 +90,8 @@ function ProjectContent({ planetID, menuButtonPressed }) {
 						<div className={styles.projectsContainer}> 
 							<div className={styles.projectCard}>
 								<div className={styles.imageProjectStack}> 
-									<img src="src/assets/default_image.png" alt="imgDefault" />
-									<img src="src/assets/default_image.png" alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
 								</div>
 								<div className={styles.projectCardContent}>.NET projects coming real soon...</div>
 							</div>
@@ -105,8 +107,8 @@ function ProjectContent({ planetID, menuButtonPressed }) {
 						<div className={styles.projectsContainer}> 
 							<div className={styles.projectCard}>
 								<div className={styles.imageProjectStack}> 
-									<img src="src/assets/default_image.png" alt="imgDefault" />
-									<img src="src/assets/default_image.png" alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
 								</div>
 								<div className={styles.projectCardContent}>Java ecosystem coming real soon...</div>
 							</div>
@@ -122,8 +124,8 @@ function ProjectContent({ planetID, menuButtonPressed }) {
 						<div className={styles.projectsContainer}> 
 							<div className={styles.projectCard}>
 								<div className={styles.imageProjectStack}> 
-									<img src="src/assets/default_image.png" alt="imgDefault" />
-									<img src="src/assets/default_image.png" alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
+									<img src={defaultImage} alt="imgDefault" />
 								</div>
 								<div className={styles.projectCardContent}>A software project is coming real soon...</div>
 							</div>

@@ -10,6 +10,16 @@ import styles from "./components/Menu.module.sass";
 import heystyles from "./components/Hey.module.sass";
 import PreLoader from "./components/PreLoader";
 
+import menuIcon from "./assets/menu.png";
+
+
+/* Images for current work section */
+import magichover from "./assets/magichover.png";
+import components from "./assets/components.webp";
+import dotnet from "./assets/dotnet.png";
+import githubSeeMore from "./assets/githublogo.png";
+/* Images for current work section */
+
 function MainArea({
 	planetID,
 	updateSetPlanetIdPressed,
@@ -140,7 +150,7 @@ function App() {
 					type="button"
 					className={styles.menuButton}
 				>
-					<img src="src\assets\menu.png" alt="menu" />
+					<img src={menuIcon} alt="menu" />
 				</button>
 				<Logo />
 			</div>
@@ -172,10 +182,10 @@ function App() {
 			<div id="nowContainerApp">
 				{ currentWorkButtonPressed && <div className="doingNowCardApp">
 				<div className="imgContainerApp">
-					<img src="src\assets\magichover.png" alt="Magic Hover" />
+					<img src={magichover} alt="Magic Hover" />
 				</div>
 					<div className="doingNowDescriptionApp"> 
-						<h1>Recreating this hover effect...</h1>
+						<h1>Recreating this hover effect</h1>
 						<h2 className={heystyles.gradient}>Why?</h2>
 						<p>Because this effect is one of the most professionally
 						implemented hovers I have ever seen</p>
@@ -184,27 +194,27 @@ function App() {
 				
 				{ currentWorkButtonPressed && <div id="midApp" className="doingNowCardApp">
 				<div className="imgContainerApp">
-					<img src="src\assets\components.webp" alt="Magic Hover" />
+					<img src={components} alt="Magic Hover" />
 				</div>
 					<div className="doingNowDescriptionApp"> 
 						<h1>Building my own component library</h1>
 						<h2 className={heystyles.gradient}>Why?</h2>
-						<p>Amazin for learning. Fun. I want my products to stand out</p>
+						<p>Amazing for learning. Fun. I want my products to stand out and go from concept to real-life fast</p>
 					</div>
 				</div>}
 				{ currentWorkButtonPressed && <div className="doingNowCardApp">
 				<div className="imgContainerApp">
-					<img src="src\assets\dotnet.png" alt="Magic Hover" />
+					<img src={dotnet} alt="Magic Hover" />
 				</div>
 					<div className="doingNowDescriptionApp"> 
-						<h1>Learnign .NET</h1>
+						<h1>Learning .NET</h1>
 						<h2 className={heystyles.gradient}>Why?</h2>
 						<p>C# is cool and a lot of things are built with .NET!</p>
 					</div>
 				</div>}
 				{ currentWorkButtonPressed && <div className="seeMoreOnGitHub">
 					{/* biome-ignore lint/a11y/useAnchorContent: <explanation> */}
-					<a href="https://github.com/MateiDumitrescu1" alt="GitHub">
+					<a href={githubSeeMore} alt="GitHub">
 						
 					</a>
 					<p>More on GitHub</p>
