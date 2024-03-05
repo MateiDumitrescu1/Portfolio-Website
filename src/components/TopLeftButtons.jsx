@@ -24,7 +24,7 @@ function TopLeftButtons({
 			<div className={newStyles.logoContainer}>
 				<p>Focus</p>
 				<p>Efficiency</p>
-				<p>Consisntency</p>
+				<p>Consistency</p>
 			</div>
 			<button
 				onClick={everythingButtonPressed}

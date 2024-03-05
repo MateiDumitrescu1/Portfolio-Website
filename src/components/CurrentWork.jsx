@@ -6,7 +6,7 @@ import heystyles from "./Hey.module.sass";
 import magichover from "../assets/magichover.png";
 import components from "../assets/components.webp";
 import dotnet from "../assets/dotnet.png";
-import githubSeeMore from "../assets/githublogo.png";
+import githubSeeMore from "../assets/github.png";
 function CurrentWork() {
 	return (
 		<div className={styles.container}>

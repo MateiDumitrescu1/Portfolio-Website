@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Menu.module.sass";
-import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 function Menu({ menuButtonPressed }) {
 	return (
@@ -26,8 +25,8 @@ function Menu({ menuButtonPressed }) {
       styles.rightBorderAnimate : ""}`}> </div>
 			<MenuItem title="home" underlineLength={2.5} />
 			<MenuItem title="about me" underlineLength={4.2} />
+			<MenuItem title="my products" underlineLength={5.7} />
 			<MenuItem title="my work" underlineLength={3.7} />
-			<MenuItem title="cv" underlineLength={0.9} />
 		</div>
 	);
 }

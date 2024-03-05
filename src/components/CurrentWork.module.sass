@@ -5,9 +5,14 @@
     height: 100%
     width: 70%
     background-color: transparent
-    opacity: 1 !important
     z-index: 5
-
+    opacity: 0
     display: flex
     flex-flow: column wrap
     padding-top: 3em
+    animation: staggeredFadeIn 0.2s ease-in-out 0.1s forwards
+@keyframes staggeredFadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1

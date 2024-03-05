@@ -13,32 +13,6 @@ import PreLoader from "./components/PreLoader";
 import TopLeftButtons from "./components/TopLeftButtons";
 import CurrentWork from "./components/CurrentWork";
 
-function MainArea({
-	planetID,
-	updateSetPlanetIdPressed,
-	currentWorkButtonPressed,
-	menuButtonPressed,
-	buttonFunction,
-	planetButtonPressed,
-}) {
-	return (
-		<>
-			<Hey
-				menuButtonPressed={menuButtonPressed}
-				timeGoDisappear={planetButtonPressed}
-			/>
-			<SolarSystem
-				updateSetPlanetIdPressed={updateSetPlanetIdPressed}
-				timeGoDisappear={planetButtonPressed || currentWorkButtonPressed}
-				buttonFunction={buttonFunction}
-			/>
-			{ planetButtonPressed && <ProjectContent 
-			planetID={planetID}
-			menuButtonPressed={menuButtonPressed} />}
-		</>
-	);
-}
-
 function App() {
 
 	const [currentWorkHovered, setCurrentWorkHovered] = useState(false);
@@ -106,14 +80,21 @@ function App() {
 				everythingButtonPressed={EverythingButtonPressed}
 			/>
 			<Menu menuButtonPressed={menuButtonPressed} />;
-			<MainArea
-				planetID={planetIdPressed}
-				updateSetPlanetIdPressed={updateSetPlanetIdPressed}
-				currentWorkButtonPressed={currentWorkButtonPressed}
+			<Hey
 				menuButtonPressed={menuButtonPressed}
-				buttonFunction={updatePlanetButtonPressed}
-				planetButtonPressed={planetButtonPressed}
+				timeGoDisappear={planetButtonPressed}
 			/>
+			{ !currentWorkButtonPressed &&
+			<SolarSystem
+				updateSetPlanetIdPressed={updateSetPlanetIdPressed}
+				timeGoDisappear={planetButtonPressed || currentWorkButtonPressed}
+				buttonFunction={updatePlanetButtonPressed}
+			/>
+			}
+			{ planetButtonPressed && 
+			<ProjectContent 
+			planetID={planetIdPressed}
+			menuButtonPressed={menuButtonPressed} />}
 
 			{ !planetButtonPressed &&
 			<div id={separatorStyles.separatorBase}

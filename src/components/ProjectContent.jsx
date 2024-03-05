@@ -6,7 +6,6 @@ import defaultImage from "../assets/default_image.png";
 function ProjectContent({ planetID, menuButtonPressed }) {
 	const [animate, setAnimate] = useState(false);
 	const actualPlanetID = planetID.split("_")[1];
-	console.log(actualPlanetID);
 	useEffect(() => {
 		const projectContentContainer = document.getElementById(
 			styles.projectContentContainerID,
