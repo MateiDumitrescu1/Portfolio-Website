@@ -12,7 +12,7 @@ import ProjectContent from "./components/ProjectContent";
 import PreLoader from "./components/PreLoader";
 import TopLeftButtons from "./components/TopLeftButtons";
 import CurrentWork from "./components/CurrentWork";
-
+import Sky from "./components/Sky";
 function App() {
 
 	const [currentWorkHovered, setCurrentWorkHovered] = useState(false);
@@ -80,6 +80,7 @@ function App() {
 				everythingButtonPressed={EverythingButtonPressed}
 			/>
 			<Menu menuButtonPressed={menuButtonPressed} />;
+			<Sky/>
 			<Hey
 				menuButtonPressed={menuButtonPressed}
 				timeGoDisappear={planetButtonPressed}

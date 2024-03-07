@@ -1,0 +1,23 @@
+@function random-stars($count, $sky-width, $sky-height, $size, $color)
+    $shadows: ()
+
+    @for $i from 1 through $count
+        $x-pos: random($sky-width) - $sky-width / 2
+        $y-pos: random($sky-height) - $sky-height / 2
+        $blur: random(3)
+        $shadow: #{$x-pos} #{$y-pos} #{$blur}px #{$size} $color
+        $shadows: append($shadows, $shadow, comma)
+
+    @return $shadows
+
+$starCount: 200
+
+    
+.sky 
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 1px
+    height: 1px
+    box-shadow: random-stars($starCount, 100vw, 100vh, 0.5px, white)
+    opacity: 0.7

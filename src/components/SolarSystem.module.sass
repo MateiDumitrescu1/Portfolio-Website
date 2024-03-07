@@ -1,9 +1,9 @@
 .solarContainer
     position: absolute
     top: 0
-    left: 50%
+    left: calc( 50% - 10em)
     min-width: 600px
-    width: 50%
+    width: 60%
     height: 100%
     background-color: transparent
     opacity: 1
@@ -18,6 +18,7 @@
     border-radius: 999px
 .orbitLine:has(.planet:hover)
     border: 2px solid white
+    box-shadow: inset 0 0 10px 0px rgb(255, 255, 255,0.5), 0 0 10px 0px rgb(255, 255, 255,0.5)
 
 .orbitLineExpand
     transition: transform 0.2s
@@ -36,7 +37,7 @@
         background-color: white
         color: black
         cursor: pointer
-    p 
+    p
         position: absolute
         width: 100%
         height: 50%
@@ -58,24 +59,27 @@ $planet2Size: 150px
 $planet3Size: 150px
 
 $animationTime: 80s
+
+$adjustOrbitLeft: 10em
+
 #orbit0
     top: -20em
-    left: 20em
+    left: 20em + $adjustOrbitLeft
     width: $orbit0Size
     height: $orbit0Size
 #orbit1
     top: -10em
-    left: 35em
+    left: 35em + $adjustOrbitLeft
     width: $orbit1Size
     height: $orbit1Size
 #orbit2
     top: -10em
-    left: 5em
+    left: 5em + $adjustOrbitLeft
     width: $orbit2Size
     height: $orbit2Size
 #orbit3
     top: 40em
-    left: -20em
+    left: -20em + $adjustOrbitLeft
     width: $orbit3Size
     height: $orbit3Size
 
@@ -98,7 +102,7 @@ $animationTime: 80s
     width: $planet2Size
     height: $planet2Size
 #planet3
-    animation: orbit3 $animationTime  linear infinite
+    animation: orbit3 $animationTime linear infinite
     top: calc( ($orbit3Size / 2) - ($planet3Size / 2))
     left: calc( ($orbit3Size / 2) - ($planet3Size / 2))
     width: $planet3Size
@@ -136,7 +140,7 @@ $animationTime: 80s
     border-radius: 50%
     border: 2px solid white
     top: 25em
-    left: 20em
+    left: 20em + $adjustOrbitLeft
     display: flex
     justify-content: center
     align-items: center
@@ -146,7 +150,7 @@ $animationTime: 80s
     transition: background-color 0.2s
 
     &:hover
-        background-color: white 
+        background-color: white
         cursor: pointer
         #actual_ISS_SVG
             filter: invert(0%)
@@ -160,7 +164,7 @@ $animationTime: 80s
     z-index: 3
     animation: ISS_SVG $animationTime linear infinite
     transition: filter 0.2s
-           
+
 // #ISS::before
 //     position: absolute
 //     content: ""
